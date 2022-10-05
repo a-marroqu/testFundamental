@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/dataModule/data-module.iml" filepath="$PROJECT_DIR$/dataModule/data-module.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fundamentals-parent.iml" filepath="$PROJECT_DIR$/fundamentals-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mainModule/main-module.iml" filepath="$PROJECT_DIR$/mainModule/main-module.iml" />
+    </modules>
+  </component>
+</project>
