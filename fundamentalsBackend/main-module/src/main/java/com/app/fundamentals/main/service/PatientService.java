@@ -47,13 +47,13 @@ public class PatientService {
 
         //Show in loop
         for(Patient patient : patientRepository.findAll()){
-            System.out.println(patient);
+            System.out.println("By loop: " + patient);
         }
 
         //Show by id
         Optional<Patient> patientRepositoryById = patientRepository.findById(1L);
         //Optional.ofNullable(users.get(id)); También valdría
         Patient patient = patientRepositoryById.orElse(null);
-        System.out.println(patient);
+        System.out.println("By id: " + patient);
     }
 }
