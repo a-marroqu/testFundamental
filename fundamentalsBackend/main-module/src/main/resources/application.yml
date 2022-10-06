@@ -1,0 +1,11 @@
+#spring.profiles.active = dev
+
+# POSTGRESQL
+#spring.datasource.url=jdbc:postgresql://localhost:5432/
+#spring.datasource.username=root
+#spring.datasource.password=root
+
+# H2
+# jdbc:h2:mem:{dbName}
+server:
+    port: 8081

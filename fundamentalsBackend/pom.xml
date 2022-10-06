@@ -41,7 +41,6 @@
 		</dependency>
 	</dependencies>
 
-	<!-- Posiblemente añadir maven-compiler-plugin -->
 	<build>
 		<plugins>
 			<plugin>

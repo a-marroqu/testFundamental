@@ -20,6 +20,7 @@ public class Patient {
      * Id of the patient
      */
     @Id
+    //TODO: posible cambiar luego la generationType
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "patient_id")
     private Long id;
