@@ -56,4 +56,11 @@ public class PatientService {
         Patient patient = patientRepositoryById.orElse(null);
         System.out.println("By id: " + patient);
     }
+
+    /**
+     * Get all Patiets from the DB.
+     */
+    public List<Patient> getAllPatientsDB() {
+        return new ArrayList<>(patientRepository.findAll());
+    }
 }
