@@ -24,12 +24,6 @@
             <artifactId>data-module</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
-
-        <dependency>
-            <groupId>org.jboss.resteasy</groupId>
-            <artifactId>resteasy-spring-boot-starter</artifactId>
-            <version>4.4.0.Final</version>
-        </dependency>
     </dependencies>
 
     <!-- build -->
@@ -39,7 +33,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.app.fundamentals.main.mainApp</mainClass>
+                    <mainClass>com.app.fundamentals.main.MainApp</mainClass>
                     <classifier>exec</classifier>
                 </configuration>
             </plugin>

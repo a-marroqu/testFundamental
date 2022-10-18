@@ -2,9 +2,11 @@ package com.app.fundamentals.main.controller;
 
 import com.app.fundamentals.data.domain.Patient;
 import com.app.fundamentals.main.business.PatientBusiness;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -14,13 +16,11 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import java.util.List;
 
 /**
  * Controller for the patients
  */
-@Controller
-@Path("/patient")
+@RestController
 @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
 public class PatientController {
 
@@ -49,8 +49,9 @@ public class PatientController {
         ResponseEntity<Object> patientList = patientBusiness.getAllPatients();
         //TODO: también podrías devolver solamente el objeto, pero esto crea una respuesta más "web"
         //con headers, statusCode(OK) y statusValue (200)
-        verifyStatus(patientList.getStatusCode());
-        return new ResponseEntity<>(patientList, HttpStatus.OK);
+
+        //ResponseEntity<Object> response = verifyStatus(patientList);
+        return new ResponseEntity<>(patientList.getBody(), patientList.getStatusCode());
     }
 
     /**
@@ -58,17 +59,18 @@ public class PatientController {
      */
     @GET()
     @Path("/{id}")
-    public ResponseEntity<Patient> getPatientById(@PathParam("id") final String id) {
-
+    public ResponseEntity<Object> getPatientById(@PathParam("id") final String id) {
+        ResponseEntity<Object> patient = patientBusiness.getPatientById(id);
+        return new ResponseEntity<>(patient.getBody(), patient.getStatusCode());
     }
 
     /**
-     * Create a patient
+     * Method to create a patient
      */
-    @POST
-    @Path("")
-    public ResponseEntity<Patient> postPatient(final Patient patient) {
-
+    @PostMapping(value = "/patient")
+    public ResponseEntity<Object> postPatient(@RequestBody final Patient patient) {
+        ResponseEntity<Object> createdPatient = patientBusiness.createPatient(patient);
+        return new ResponseEntity<Object>(createdPatient.getBody(), createdPatient.getStatusCode());
     }
 
     /**
@@ -77,7 +79,7 @@ public class PatientController {
     @PUT
     @Path("")
     public ResponseEntity<Patient> modifyPatient(final Patient patient) {
-
+        return null;
     }
 
     /**
@@ -86,11 +88,22 @@ public class PatientController {
     @DELETE
     @Path("/{id}")
     public ResponseEntity<Patient> deletePatient(@PathParam("id") final String id) {
-
+        return null;
     }
 
-
-    private void verifyStatus(HttpStatus statusCode) {
-
-    }
+    /**
+     * Method to verify status code, but i dont think its needed. The stats is set on the business page.
+     */
+//    private ResponseEntity<Object> verifyStatus(ResponseEntity<Object> patientBusiness) {
+//        ResponseEntity<Object> response;
+//
+//        switch(patientBusiness.getStatusCode()) {
+//            case OK:
+//                return  patientBusiness;
+//            default:
+//
+//        }
+//
+//        return null;
+//    }
 }
