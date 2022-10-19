@@ -15,6 +15,6 @@ import javax.ws.rs.core.Application;
         }
 )
 //TODO: averiguar porqué no funciono, algún día
-//@ApplicationPath("/hospital")
+//@ApplicationPath("/Rosell")
 public class MainConfig extends Application {
 }

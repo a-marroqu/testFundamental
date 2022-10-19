@@ -6,6 +6,7 @@ import com.app.fundamentals.main.exception.InvalidObjectException;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
+import javax.ws.rs.NotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -72,21 +73,20 @@ public class PatientService {
     }
 
     /**
-     * Returns found Patient by set ID.
+     * Returns found Patient by set ID in the DB.
      *
      * @param id    ID of the Patient to find.
      * @return  Patient found by set ID.
      */
-    public Patient getPatientByIdDB(final String id) {
-        Long idLong = Long.parseLong(id);
-        return patientRepository.findById(idLong).orElse(null);
+    public Patient getPatientByIdDB(final Long id) {
+        return patientRepository.findById(id).orElse(null);
     }
 
     /**
      * Creates new Patient in the DB.
      *
      * @param patient   Patient to insert in the DB.
-     * @return  Created patient.
+     * @return  Created Patient.
      */
     public Patient createPatientToDB(final Patient patient) {
         Patient duplication = patientRepository.findByNameAndSurnameAndSickness(patient.getName(), patient.getSurname(), patient.getSickness());
@@ -97,5 +97,31 @@ public class PatientService {
         } else {
             throw new InvalidObjectException("There is already a Patient with that name, surname and sickness");
         }
+    }
+
+    /**
+     * Modifies a found Patient in the DB.
+     *
+     * @param patient   Patient to modify in the DB.
+     * @return  Modified Patient.
+     */
+    public Patient modifyPatientToDB(final Patient patient) {
+        Patient foundPatient = this.getPatientByIdDB(patient.getId());
+
+        if(Objects.nonNull(foundPatient)) {
+            Patient modifiedPatient = null;
+            return modifiedPatient = patientRepository.save(patient);
+        }
+
+        return null;
+    }
+
+    /**
+     * Delete a Patient by its Id.
+     *
+     * @param id    Id of the Patient to eliminate.
+     */
+    public void deletePatientFromDB(final Long id) {
+        patientRepository.deleteById(id);
     }
 }
