@@ -51,6 +51,7 @@ public class PatientController {
     public ResponseEntity<Object> getAllPatients() {
         ResponseEntity<Object> patientList = patientBusiness.getAllPatients();
         //TODO: también podrías devolver solamente el objeto, pero esto crea una respuesta más "web"
+        //TODO: en el response entity, en vez de object, poner el objeto
         //con headers, statusCode(OK) y statusValue (200)
 
         //ResponseEntity<Object> response = verifyStatus(patientList);
