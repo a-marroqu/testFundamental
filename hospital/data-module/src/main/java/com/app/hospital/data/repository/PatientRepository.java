@@ -1,6 +1,6 @@
-package com.app.fundamentals.data.repository;
+package com.app.hospital.data.repository;
 
-import com.app.fundamentals.data.domain.Patient;
+import com.app.hospital.data.domain.Patient;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,4 +1,4 @@
-package com.app.fundamentals.main.config.jackson;
+package com.app.hospital.main.config.jackson;
 
 import com.fasterxml.jackson.databind.Module;
 import com.fasterxml.jackson.databind.module.SimpleModule;

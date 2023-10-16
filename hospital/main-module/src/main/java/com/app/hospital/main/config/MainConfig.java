@@ -1,4 +1,4 @@
-package com.app.fundamentals.main.config;
+package com.app.hospital.main.config;
 
 import org.jboss.resteasy.spi.ResteasyProviderFactory;
 import org.springframework.context.annotation.ComponentScan;
@@ -10,8 +10,8 @@ import javax.ws.rs.core.Application;
 @Configuration
 @ComponentScan(
         {
-                "com.app.fundamentals.data",
-                "com.app.fundamentals.main"
+                "com.app.hospital.data",
+                "com.app.hospital.main"
         }
 )
 //TODO: averiguar porqué no funciono, algún día

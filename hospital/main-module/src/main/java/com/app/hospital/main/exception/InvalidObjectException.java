@@ -1,4 +1,4 @@
-package com.app.fundamentals.main.exception;
+package com.app.hospital.main.exception;
 
 /**
  * Exception class for validating objects

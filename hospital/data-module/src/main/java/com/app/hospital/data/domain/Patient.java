@@ -1,4 +1,4 @@
-package com.app.fundamentals.data.domain;
+package com.app.hospital.data.domain;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;

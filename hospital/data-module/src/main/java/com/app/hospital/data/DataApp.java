@@ -1,4 +1,4 @@
-package com.app.fundamentals.data;
+package com.app.hospital.data;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

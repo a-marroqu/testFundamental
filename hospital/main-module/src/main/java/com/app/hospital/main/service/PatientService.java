@@ -1,12 +1,10 @@
-package com.app.fundamentals.main.service;
+package com.app.hospital.main.service;
 
-import com.app.fundamentals.data.domain.Patient;
-import com.app.fundamentals.data.repository.PatientRepository;
-import com.app.fundamentals.main.exception.InvalidObjectException;
+import com.app.hospital.data.domain.Patient;
+import com.app.hospital.data.repository.PatientRepository;
+import com.app.hospital.main.exception.InvalidObjectException;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
-import javax.ws.rs.NotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
