@@ -11,11 +11,11 @@
 	</parent>
 
 	<groupId>com.app.fundamentals</groupId>
-	<artifactId>fundamentals-parent</artifactId>
+	<artifactId>hospital</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
-	<name>fundamentals - POM parent</name>
+	<name>hospital - POM parent</name>
 	<description>Demo project for Spring Boot</description>
 
 	<modules>
