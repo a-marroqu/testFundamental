@@ -24,9 +24,9 @@ public class Patient implements Serializable {
     /**
      * Id of the patient
      */
-    @Id
     //TODO: posible cambiar luego la generationType
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "patient_id")
     private Long id;
 
