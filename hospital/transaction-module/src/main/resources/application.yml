@@ -1,6 +1,12 @@
+server:
+    port: 8082
+    servlet:
+        context-path: /hospital
 spring:
     datasource:
         driver-class-name: org.postgresql.Driver
         url: jdbc:postgresql://localhost:5432/hospital
-        username:
+        username: postgres
         password: 5657
+    liquibase:
+        changelog: "classpath:db/changelog/db.changelog-master.yml"

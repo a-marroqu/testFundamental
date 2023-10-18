@@ -1,0 +1,9 @@
+databaseChangeLog:
+    - changeSet:
+          id: drop not null constraint
+          author: lil Yin
+          changes:
+              - dropNotNullConstraint:
+                    columnName: patient_id
+                    tableName: patients
+#ESTO NO PUEDE SER PORQUE ES EL ID (?) CUANDO METÍ EL CAMBIO EN EL CHANGELOG MASTER, PETO LA WEA

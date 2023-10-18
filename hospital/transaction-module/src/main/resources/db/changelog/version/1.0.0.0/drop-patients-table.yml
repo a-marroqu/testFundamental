@@ -1,0 +1,7 @@
+databaseChangeLog:
+    - changeSet:
+          id: changeId data type
+          author: lil Yin
+          changes:
+              - dropTable:
+                    tableName: patients

@@ -1,0 +1,13 @@
+databaseChangeLog:
+    - include:
+        file: version/1.0.0.0/patients-table.sql
+        relativeToChangelogFile: true
+    - include:
+        file: version/1.0.0.0/patients-table-ID-modif.yml
+        relativeToChangelogFile: true
+    - include:
+          file: version/1.0.0.0/drop-patients-table.yml
+          relativeToChangelogFile: true
+    - include:
+          file: version/1.1.0.0/patients-table.sql
+          relativeToChangelogFile: true

@@ -1,0 +1,9 @@
+databaseChangeLog:
+    - changeSet:
+          id: changeId data type
+          author: lil Yin
+          changes:
+              - modifyDataType:
+                    columnName: patient_id
+                    newDataType: SERIAL
+                    tableName: patients
