@@ -1,7 +1,7 @@
-package com.app.hospital.main.controller;
+package com.app.hospital.transaction.controller;
 
 import com.app.hospital.data.domain.Patient;
-import com.app.hospital.main.business.PatientBusiness;
+import com.app.hospital.transaction.business.PatientBusiness;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.ws.rs.Produces;
@@ -18,6 +19,7 @@ import javax.ws.rs.core.MediaType;
  * Controller for the patients
  */
 @RestController
+@RequestMapping("/patient")
 @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
 public class PatientController {
 
@@ -40,7 +42,7 @@ public class PatientController {
     /**
      * Method to get all patients
      */
-    @GetMapping(value = "/patient")
+    @GetMapping
     public ResponseEntity<Object> getAllPatients() {
         ResponseEntity<Object> patientList = patientBusiness.getAllPatients();
         //TODO: también podrías devolver solamente el objeto, pero esto crea una respuesta más "web"
@@ -54,7 +56,7 @@ public class PatientController {
     /**
      * Method to get a patient by its ID
      */
-    @GetMapping(value = "/patient/{id}")
+    @GetMapping(value = "/{id}")
     public ResponseEntity<Object> getPatientById(@PathVariable("id") final Long id) {
         ResponseEntity<Object> patient = patientBusiness.getPatientById(id);
         return new ResponseEntity<>(patient.getBody(), patient.getStatusCode());
@@ -63,7 +65,7 @@ public class PatientController {
     /**
      * Method to create a patient
      */
-    @PostMapping(value = "/patient")
+    @PostMapping
     public ResponseEntity<Object> postPatient(@RequestBody final Patient patient) {
         ResponseEntity<Object> createdPatient = patientBusiness.createPatient(patient);
         return new ResponseEntity<Object>(createdPatient.getBody(), createdPatient.getStatusCode());
@@ -72,7 +74,7 @@ public class PatientController {
     /**
      * Modify a patient
      */
-    @PutMapping(value = "/patient")
+    @PutMapping
     public ResponseEntity<Object> modifyPatient(@RequestBody final Patient patient) {
         ResponseEntity<Object> modifiedPatient = patientBusiness.modifyPatient(patient);
         return new ResponseEntity<Object>(modifiedPatient.getBody(), modifiedPatient.getStatusCode());
@@ -81,7 +83,7 @@ public class PatientController {
     /**
      * Delete a patient
      */
-    @DeleteMapping(value = "/patient/{id}")
+    @DeleteMapping(value = "/{id}")
     public ResponseEntity<Object> deletePatient(@PathVariable("id") final Long id) {
         ResponseEntity<Object> deletedPatient = patientBusiness.deletePatient(id);
         return new ResponseEntity<Object>(deletedPatient.getBody(), deletedPatient.getStatusCode());

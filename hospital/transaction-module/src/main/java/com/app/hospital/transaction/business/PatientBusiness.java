@@ -1,8 +1,8 @@
-package com.app.hospital.main.business;
+package com.app.hospital.transaction.business;
 
 import com.app.hospital.data.domain.Patient;
 import com.app.hospital.main.exception.InvalidObjectException;
-import com.app.hospital.main.service.PatientService;
+import com.app.hospital.transaction.service.PatientService;
 import org.junit.platform.commons.util.StringUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

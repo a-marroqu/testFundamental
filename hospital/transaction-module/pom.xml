@@ -19,8 +19,26 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.app.hospital</groupId>
+            <artifactId>data-module</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.app.hospital</groupId>
+            <artifactId>main-module</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <scope>runtime</scope>
         </dependency>
 
         <dependency>
@@ -35,6 +53,10 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.app.hospital.transaction.TransactionApp</mainClass>
+                    <classifier>exec</classifier>
+                </configuration>
             </plugin>
         </plugins>
         <pluginManagement>

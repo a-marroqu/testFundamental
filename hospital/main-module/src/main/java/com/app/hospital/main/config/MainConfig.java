@@ -11,7 +11,8 @@ import javax.ws.rs.core.Application;
 @ComponentScan(
         {
                 "com.app.hospital.data",
-                "com.app.hospital.main"
+                "com.app.hospital.main",
+                "com.app.hospital.transaction"
         }
 )
 //TODO: averiguar porqué no funciono, algún día

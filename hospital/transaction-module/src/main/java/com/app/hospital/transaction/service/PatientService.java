@@ -1,4 +1,4 @@
-package com.app.hospital.main.service;
+package com.app.hospital.transaction.service;
 
 import com.app.hospital.data.domain.Patient;
 import com.app.hospital.data.repository.PatientRepository;
