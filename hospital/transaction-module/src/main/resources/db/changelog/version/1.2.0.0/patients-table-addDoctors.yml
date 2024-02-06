@@ -1,0 +1,16 @@
+databaseChangeLog:
+    - changeSet:
+        id: add doctors to patients
+        author: lil Yin
+        changes:
+            - addColumn:
+                tableName: patients
+                columns:
+                    - column:
+                        name: doctor_cabecera_id
+                        type: bigint
+                        constraints:
+                            nullable: false
+                            foreignKeyName: FK_Patient_DoctorCabecera
+                            references: doctors(empleado_id)
+                            #oneToOne -> one patient to one doctor

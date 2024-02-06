@@ -33,18 +33,18 @@ public class PatientService {
      */
     public void addPatient() {
         //TODO: funciona lo de linkear módulos mediante el POM
-        Patient patient = new Patient(1L, "Benito", "Pérez", "está fatal");
-
-        List<Patient> patientList = new ArrayList<>();
-        patientList.add(patient);
-        patientList.add(new Patient(2L, "Carlos", "Buenafuente", "madre mía"));
-        patientList.add(new Patient(3L, "Juan", "Pérez", "ahora el otro"));
-        patientList.add(new Patient(4L, "Pepe", "Luis", "se lo dices tú o yo"));
+//        Patient patient = new Patient(1L, "Benito", "Pérez", "está fatal", null);
+//
+//        List<Patient> patientList = new ArrayList<>();
+//        patientList.add(patient);
+//        patientList.add(new Patient(2L, "Carlos", "Buenafuente", "madre mía", null));
+//        patientList.add(new Patient(3L, "Juan", "Pérez", "ahora el otro", null));
+//        patientList.add(new Patient(4L, "Pepe", "Luis", "se lo dices tú o yo", null));
 
         // TODO: funciona lo del patientRepository también
-        patientRepository.saveAll(patientList);
-
-        showPatients();
+//        patientRepository.saveAll(patientList);
+//
+//        showPatients();
     }
 
     private void showPatients() {

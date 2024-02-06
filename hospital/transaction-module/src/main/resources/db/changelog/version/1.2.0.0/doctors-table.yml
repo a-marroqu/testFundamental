@@ -1,0 +1,52 @@
+databaseChangeLog:
+    -   changeSet:
+            id: create doctors table
+            author: lil Yin
+            changes:
+                - createTable:
+                      tableName: doctors
+                      columns:
+                          - column:
+                                name: empleado_id
+                                type: bigint
+                                constraints:
+                                    primaryKey: true
+                          - column:
+                                name: empleado_name
+                                type: varchar(255)
+                          - column:
+                                name: empleado_apellido
+                                type: varchar(255)
+                          - column:
+                                name: empleado_edad
+                                type: int
+                          - column:
+                                name: empleado_genero
+                                type: varchar(255)
+                          - column:
+                                name: empleado_contrato
+                                type: varchar(255)
+                          - column:
+                                name: empleado_inicioContrato
+                                type: time
+                          - column:
+                                name: empleado_finContrato
+                                type: time
+                          - column:
+                                name: empleado_sueldo
+                                type: double
+                          - column:
+                                name: empleado_vacaciones
+                                type: int
+                          - column:
+                                name: empleado_diasAsuntosPropios
+                                type: int
+                          - column:
+                                name: doctor_especialidad
+                                type: varchar(255)
+                          - column:
+                                name: doctor_departamento
+                                type: varchar(255)
+                          - column:
+                                name: doctor_nivel
+                                type: varchar(255)
