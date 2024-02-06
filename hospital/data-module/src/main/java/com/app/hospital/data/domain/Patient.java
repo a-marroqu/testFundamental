@@ -11,8 +11,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import java.io.Serializable;
+import java.util.List;
 
 @Data
 @Entity
@@ -52,4 +58,16 @@ public class Patient implements Serializable {
     @Column(name = "patient_sickness")
     @JsonProperty(required = true)
     private String sickness;
+
+    @OneToOne
+    @JoinColumn(name = "doctor_cabecera_id")
+    private Doctor doctorCabecera;
+
+//    @ManyToMany
+//    @JoinTable(
+//            name = "patient_doctor",
+//            joinColumns = @JoinColumn(name = "patient_id"),
+//            inverseJoinColumns = @JoinColumn(name = "doctor_id")
+//    )
+//    private List<Doctor> otherDoctors;
 }
